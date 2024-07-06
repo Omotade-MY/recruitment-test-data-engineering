@@ -15,6 +15,13 @@ services:
       - "3306:3306"
     restart: always
 
+  assignment:
+    image: assignment
+    build: images/assignment
+    command: ["./main.py"]
+    volumes:
+      - ./data:/data
+
   example-c:
     image: example-c
     build: images/example-c
